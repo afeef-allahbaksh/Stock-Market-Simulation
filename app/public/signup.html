@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+
+    <div class="form">
+        <h2>Sign Up</h2>
+        <form id="signupForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Sign Up</button>
+        </form>
+        <div id="message"></div>
+    </div>
+
+    <script>
+        document.getElementById("signupForm").addEventListener("submit", async (event) => {
+            event.preventDefault();
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            try {
+                const response = await fetch("/signup", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ username, password })
+                });
+
+                const result = await response.json();
+                const messageDiv = document.getElementById("message");
+
+                if (response.ok) {
+                    messageDiv.textContent = "Sign up successful! Redirecting...";
+                    messageDiv.style.color = "green";
+                    setTimeout(() => {
+                        window.location.href = "/index.html"; 
+                    }, 2000);
+                } else {
+                    messageDiv.textContent = result.message || "An error occurred";
+                    messageDiv.style.color = "red";
+                }
+            } catch (error) {
+                console.error("Error signing up:", error);
+                document.getElementById("message").textContent = "An error occurred. Please try again.";
+            }
+        });
+    </script>
+</body>
+</html>

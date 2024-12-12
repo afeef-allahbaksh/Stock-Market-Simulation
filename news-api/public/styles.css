@@ -1,0 +1,119 @@
+/* styles.css */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+header {
+    background-color: #343a40;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+#search-input {
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 250px;
+}
+
+#category-select {
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+#search-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#search-button:hover {
+    background-color: #0056b3;
+}
+
+main {
+    padding: 20px;
+}
+
+#news-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.article {
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    transition: transform 0.2s;
+}
+
+.article:hover {
+    transform: translateY(-5px);
+}
+
+.article h3 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #007bff;
+}
+
+.article p {
+    margin: 10px 0;
+    color: #555;
+}
+
+.article a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.article a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #343a40;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

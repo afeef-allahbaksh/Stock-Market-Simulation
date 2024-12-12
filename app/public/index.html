@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Stock News</title>
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <img src="images/logo.png" alt="Stock News Logo" />
+                <h1 style="color: aliceblue; font-size: larger;">Stock News</h1>
+            </div>
+            
+            <div class="button-container">
+                <button id="logoutButton", class="logoutButton">Logout</button>
+                <button id="loginButton">Log In</button>
+            </div>
+
+            <div class="button-container">
+            <button id="signupButton", class="sign-upbutton">Sign Up</button>
+        </div>
+
+        </header>
+       
+
+        <main>
+            <div class="container", style="width: 1000px; float: left;">
+
+                <div class="search-container" style="width: 300px;">
+                    <input
+                        type="text"
+                        id="search-input"
+                        placeholder="Search stock or business news..."
+                    />
+                    <button id="search-button">Search</button>
+                </div>
+                <h1>Stock Trading System</h1>
+
+            <!-- Balance Section -->
+            <div class="section">
+                <div class="balance-display">
+                    Balance: $<span id="balance">1000.00</span>
+                </div>
+            </div>
+
+            <div class="container">
+                <!-- Trading Section -->
+                <div class="section">
+                    <h2>Trade Stocks</h2>
+                    <div class="input-group">
+                        <input type="text" id="stock-symbol" placeholder="Stock Symbol (e.g., AAPL)" required>
+                        <input type="number" id="amount" placeholder="Number of shares" min="1" required>
+                    </div>
+                    <div class="input-group">
+                        <button id="buy-button">Buy Stocks</button>
+                        <button id="sell-button" class="sell-button">Sell Stocks</button>
+                    </div>
+                </div>
+
+
+                           <!-- Portfolio Section -->
+            <div class="section">
+                <h2>Your Portfolio</h2>
+                <ul id="portfolio-list"></ul>
+            </div>
+
+            <!-- Price Alerts Section -->
+            <div class="section alert-section">
+                <h2>Price Alerts</h2>
+                <div class="input-group">
+                    <input type="text" id="alert-symbol" placeholder="Stock Symbol" required>
+                    <input type="number" id="upper-limit" placeholder="Upper Price Limit" step="0.01">
+                    <input type="number" id="lower-limit" placeholder="Lower Price Limit" step="0.01">
+                </div>
+                <button id="set-alert-button">Set Price Alert</button>
+            </div>
+
+            <!-- Transaction History Section -->
+            <div class="section">
+                <h2>Transaction History</h2>
+                <button id="toggle-history-button">Show Transaction History</button>
+                <div id="transaction-history-container" style="display: none;">
+                    <ul id="transaction-history"></ul>
+                </div>
+            </div>
+
+            <!-- Active Alerts Section -->
+            <div class="section">
+                <h2>Active Price Alerts</h2>
+                <ul id="active-alerts-list"></ul>
+            </div>
+        </div>
+            </div>
+        </div>
+            <div id="news-container", style="margin-left: 620px;"></div>
+            <p id="api-status">Checking API status...</p>
+
+        </main>
+
+
+        <script src="index.js"></script>
+        <script src="script.js"></script>
+        <script src="invest.js"></script>
+    </body>
+</html>
